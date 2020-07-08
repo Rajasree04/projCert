@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Second {
 	public static void main(String arg[]) {
+		 System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://ec2-3-15-148-238.us-east-2.compute.amazonaws.com:8082/");
 		driver.findElement(By.linkText("Home")).click();
