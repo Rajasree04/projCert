@@ -1,0 +1,22 @@
+---
+- hosts: webservers
+  become: yes
+  become_user: root
+  tasks:
+  - name: install git
+    package:
+     name: git
+     state: present
+  - name: install java
+    package:
+     name: openjdk-8-jdk
+     state: present
+  - name: copy chromedriver
+    copy:
+     src: /root/chromedriver
+     dest: /root
+  - name: install chromium browser
+    package:
+     name: chromium-browser
+     state: present
+
